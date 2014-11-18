@@ -67,5 +67,5 @@ while n<len(ch):
     nch=nch+int(hexa(a))*16**i
     n=n+1
     i=i-1
-print(nch,hexa(a))
+print(nch)
 
