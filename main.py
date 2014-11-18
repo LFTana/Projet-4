@@ -36,11 +36,11 @@ if str(choix)=="1":
         n=n//16 #ce calcule recommence tant que le nouveau n obtenu est superieur à 15.
     nch=""
     for x in reversed(ch): #pour inverser la chaine de caractère.
-        nch=nch+str(x)
+        nch=nch+str(x)#on a utilisé str() car on ne peut pas ajouté a un str un int().
     print(nch)
-#on a utilisé str() car on ne peut pas ajouté a un str un int().
-if str(choix)=="2":
-def hexa(a):
+
+
+def hexa(a):# fonction qui converti le a eme terme qui est en base 16 en base 10
     if str(a)<'10':
         a=str(a)
     elif str(a)=='A':
@@ -57,15 +57,15 @@ def hexa(a):
         a=15
     return a
 
-
-ch=input("Entrer un nombre en Hexadecimale")
-n=0
-i=len(ch)-1
-nch=0
-while n<len(ch):
-    a=ch[n]
-    nch=nch+int(hexa(a))*16**i
-    n=n+1
-    i=i-1
-print(nch)
+if str(choix)=="2":
+ch=input("Entrer un nombre en Hexadecimale")#Demande a l'utilisateur d'inserer un nombre en base 16
+n=0          #On affecte à la variable n qui est un compteur la valeur 0
+i=len(ch)-1   #i (la variable correspondant au nombre de rang du nombre ch) est la longueur du nombre ch,a qui on soustrait 1 puisque l'on compte le rang a partir de 0
+nch=0 # on affecte à la variable nch la valeur 0
+while n<len(ch): # Tant que n est inferieur a la longueur de ch faire:
+    a=ch[n] #a prend la valeur du n eme rang de ch 
+    nch=nch+int(hexa(a))*16**i# on affecte à nch, sa valeur + la valeur de a en base 10 que l'on trouve par l'intermediare de la fonction hexa(a),multipliée par 16 a la puissance i  
+    n=n+1 # on ajoute 1 à la valeur de n pour refaire l'operation au rang suivant
+    i=i-1 # on soustrait 1 à i puisque le terme suivant sera un rang plus faible que le precedent 
+print(nch) # Afficher nch 
 
